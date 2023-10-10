@@ -40,22 +40,3 @@ body {
   left: 0;
   border-radius: 0.8rem;
 }
-
-.actions {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-a {
-  color: #88ce02;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-.drag-proxy {
-  visibility: hidden;
-  position: absolute;
-}

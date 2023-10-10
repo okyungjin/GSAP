@@ -2,13 +2,16 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
 import { Draggable } from 'gsap/Draggable.js';
 
+
+// https://codepen.io/GreenSock/pen/RwKwLWK
+
 gsap.registerPlugin(ScrollTrigger, Draggable);
 let iteration = 0; // gets iterated when we scroll all the way to the end or start and wraps around - allows us to smoothly continue the playhead scrubbing in the correct direction.
 
 // set initial state of items
-gsap.set('.cards li', { yPercent: 0, opacity: 0, scale: 0.2 });
+gsap.set('.cards li', { yPercent: 0, opacity: 0, scale: 1 });
 
-const spacing = 0.1; // spacing of the cards (stagger)
+const spacing = 0.2; // spacing of the cards (stagger)
 const snapTime = gsap.utils.snap(spacing); // we'll use this to snapTime the playhead on the seamlessLoop
 const cards = gsap.utils.toArray('.cards li');
 // this function will get called for each element in the buildSeamlessLoop() function, and we just need to return an animation that'll get inserted into a master timeline, spaced
@@ -16,7 +19,7 @@ const animateFunc = (element) => {
   const tl = gsap.timeline();
   tl.fromTo(
     element,
-    { scale: 0.2, opacity: 0.5 },
+    { scale: 1, opacity: 0.5 },
     {
       scale: 2,
       opacity: 1,
